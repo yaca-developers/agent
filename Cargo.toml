@@ -1,0 +1,24 @@
+[package]
+name = "yaca-agent"
+version = "0.1.0"
+edition = "2024"
+
+[[bin]]
+name = "yaca-agent"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1.0"
+async-stream = "0.3"
+tokio = { version = "1", features = ["net", "signal", "macros", "rt-multi-thread", "sync", "time"] }
+tokio-util = "0.7"
+tokio-stream = { version = "0.1", features = ["sync"] }
+tonic = "0.14"
+uuid = { version = "1", features = ["v4"] }
+yaca-core = { path = "../yaca-core" }
+yaca-transport = { path = "../yaca-transport" }
+tracing = "0.1"
+tracing-subscriber = "0.3"
+
+[dev-dependencies]
+rig = "0.42.0"
